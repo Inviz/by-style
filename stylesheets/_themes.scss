@@ -1,0 +1,106 @@
+@mixin theme($body-text-color: #333, $heading-text-color: $body-text-color, $extra-text-color: $body-text-color, $accent-text-color: white, $accent-color: yellow, $contrast-background-color: red, $contrast-background-overlap-color: $contrast-background-color, $background-color: orange, $background-overlap-color: $background-color) {
+  color: $body-text-color;
+
+  h2 {
+    color: $heading-text-color;
+  }
+
+  .tagline {
+    color: $extra-text-color;
+  }
+
+  .contrast-blocks & {
+    background-color: $contrast-background-color;
+  }
+
+  .image-background & {
+    background: rgba($background-color, 0.9);
+  }
+
+  button {
+    background: $accent-color;
+  }
+
+  .inner, .inner:before {
+    border-color: $accent-color;
+  }
+
+  hr {
+    background: url("../../divider-red.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  .add-to-cart {
+    background-color: rgba($contrast-background-color, 0.8);
+    color: darken($accent-color, 10%);
+  }
+
+  &.with-overlap.align-right .inner {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to left, rgba($background-overlap-color, 0.8) 0, rgba($background-overlap-color, 0.8) 2.5rem, $background-color 2.8rem, $background-color);
+  }
+
+  &.with-overlap.align-right .add-to-cart {
+    background-image: linear-gradient(to left, rgba($contrast-background-overlap-color, 0.8) 0, rgba($contrast-background-overlap-color, 0.8) 3rem, $contrast-background-color 3rem, $contrast-background-color);
+  }
+
+  &.with-overlap.align-top .inner {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, rgba($background-overlap-color, 0.8) 0, rgba($background-overlap-color, 0.8) 2.5rem, $background-color 2.8rem, $background-color);
+  }
+
+  &.with-overlap.align-top .add-to-cart {
+    background-image: linear-gradient(to bottom, rgba($contrast-background-overlap-color, 0.8) 0, rgba($contrast-background-overlap-color, 0.8) 3rem, $contrast-background-color 3rem, $contrast-background-color);
+  }
+
+  &.with-overlap.align-bottom .inner {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top, rgba($background-overlap-color, 0.8) 0, rgba($background-overlap-color, 0.8) 2.5rem, $background-color 2.8rem, $background-color);
+  }
+
+  &.with-overlap.align-bottom .add-to-cart {
+    background-image: linear-gradient(to top, rgba($contrast-background-overlap-color, 0.8) 0, rgba($contrast-background-overlap-color, 0.8) 3rem, $contrast-background-color 3rem, $contrast-background-color);
+  }
+
+  &.with-overlap.align-left .inner {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba($background-overlap-color, 0.8) 0, rgba($background-overlap-color, 0.8) 2.5rem, $background-color 2.8rem, $background-color);
+  }
+
+  &.with-overlap.align-left .add-to-cart {
+    background-image: linear-gradient(to right, rgba($contrast-background-overlap-color, 0.8) 0, rgba($contrast-background-overlap-color, 0.8) 3rem, $contrast-background-color 3rem, $contrast-background-color);
+  }
+
+  &.with-overlap .add-to-cart {
+    background-color: transparent;
+    background-repeat: no-repeat;
+  }
+
+  &.with-overlap .add-to-cart button {
+    color: $accent-text-color;
+  }
+}
+
+.block.white {
+  @include theme($body-text-color: #d5d7c9, $heading-text-color: #333, $extra-text-color: #4f4f4d, $accent-color: #534339, $background-color: #ffffff, $background-overlap-color: #ffffff, $contrast-background-color: #d5d7c9, $contrast-background-overlap-color: #e3e7cb);
+}
+
+.block.blue {
+  @include theme($body-text-color: #d5d7c9, $heading-text-color: #e5d4bc, $extra-text-color: #4f4f4d, $accent-color: #534339, $background-color: #768380, $background-overlap-color: #70807d, $contrast-background-color: #d5d7c9, $contrast-background-overlap-color: #e3e7cb);
+}
+
+.block.pink {
+  @include theme($body-text-color: #333, $extra-text-color: #4f4f4d, $accent-color: #223a06, $background-color: #d5bbc6, $background-overlap-color: #d5bbc6, $contrast-background-color: #c79595, $contrast-background-overlap-color: #c58787);
+}
+
+.block.light-blue {
+  @include theme($body-text-color: #333, $extra-text-color: #4f4f4d, $accent-color: #7d6b71, $background-color: #b4bcc8, $background-overlap-color: #b4bcc8, $contrast-background-color: #9e8f96, $contrast-background-overlap-color: #97818b);
+}
+
+.block.yellow {
+  @include theme($accent-color: #534339, $background-color: #e1daa8, $background-overlap-color: #e1d897, $contrast-background-color: #c1b698, $contrast-background-overlap-color: #baaa7d);
+}
+
+.block.orange {
+  @include theme($contrast-background-color: #c0b4ac, $contrast-background-overlap-color: #b5aaa3, $accent-color: #8d6543, $background-color: #e5b496, $background-overlap-color: #e7a881);
+}

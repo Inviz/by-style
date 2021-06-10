@@ -1,0 +1,32 @@
+.block {
+
+  &.narrow .inner {
+    max-width: 350px;
+  }
+  @media (min-width: 1400px) {
+    font-size: 1.3em;
+
+    &.narrow .inner {
+      max-width: 450px;
+    }
+  }
+  &.large {
+    font-size: 1.3em;
+    &.narrow .inner {
+      max-width: 450px;
+    }
+  }
+}
+
+.content {
+  li {
+    list-style: none;
+  }
+
+  li:before {
+      content:"· ";
+      font-size:16px;
+      vertical-align:middle;
+      line-height:20px;
+  }
+}
